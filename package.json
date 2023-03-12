@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "@actions/core": "^1.10.0",
+    "@actions/github": "^5.1.1"
+  },
+  "name": "minimum-open-time",
+  "description": "A GitHub Action that enforces PR dependencies",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+    "jest": "^29.5.0"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gregsdennis/minimum-open-time.git"
+  },
+  "keywords": [],
+  "author": "Greg Dennis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gregsdennis/minimum-open-time/issues"
+  },
+  "homepage": "https://github.com/gregsdennis/minimum-open-time#readme"
+}

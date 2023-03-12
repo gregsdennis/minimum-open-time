@@ -1,0 +1,8 @@
+name: 'Minimum Open Time'
+description: 'Verify PRs have been open for a minimum time'
+branding:
+  icon: alert-triangle
+  color: orange
+runs:
+  using: 'node16'
+  main: 'index.js'
