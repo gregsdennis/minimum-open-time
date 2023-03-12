@@ -7,6 +7,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: test yo-self
-        uses: ./
-        with:
-          time: 2d
+      uses: ./
+      with:
+        time: 2d
