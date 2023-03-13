@@ -77,7 +77,7 @@ function getDurationInput() {
         return undefined;
     }
 
-    return {
+    const duration = {
         years: years,
         months: months,
         weeks: weeks,
@@ -85,7 +85,11 @@ function getDurationInput() {
         hours: hours,
         minutes: minutes,
         seconds: seconds
-    }
+    };
+
+    core.info(`Input duration: ${duration}`);
+
+    return duration;
 }
 
 async function run() {
