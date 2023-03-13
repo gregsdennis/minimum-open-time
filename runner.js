@@ -58,7 +58,7 @@ function addDuration(date, duration) {
     return date;
 }
 
-function getInputDuration() {
+function getDurationInput() {
     var time = core.getInput('time');
     if (time !== undefined){
         return parseDuration(time);
@@ -102,7 +102,7 @@ async function run() {
 
         // get parameters
 
-        const openTime = getInputDuration(parameters);
+        const openTime = getDurationInput();
         if (openTime === undefined){
             return;
         }
