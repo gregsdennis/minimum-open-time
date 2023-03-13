@@ -34,6 +34,8 @@ function addMonths(date, months) {
 }
 
 function addDuration(date, duration) {
+    core.info(`typeof date: ${typeof date}`);
+
     if (!isNaN(duration.years)){
         date.setFullYear(date.getFullYear() + duration.years);
     }
