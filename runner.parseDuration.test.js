@@ -170,7 +170,16 @@ test('parse time part', () =>
 
 test('parse week with day - fails', () =>
 {
-    expect(() => runner.parseDuration('5y13w5d')).toThrow();
+    const duration = runner.parseDuration('5y13w5d');
+    expect(duration).toStrictEqual({
+        years: 5,
+        months: NaN,
+        weeks: 13,
+        days: 5,
+        hours: NaN,
+        minutes: NaN,
+        seconds: NaN
+    });
 });
 
 test('parse week with month - fails', () =>

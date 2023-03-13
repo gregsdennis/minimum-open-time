@@ -8,7 +8,7 @@ function check(requirement) {
     return now >= requirement;
 }
 
-const durationPattern = /^((?<year>\d+)y)?(((?<month>\d+)M)?((?<day>\d+)d)?|(((?<week>\d+)w)?))((?<hour>\d+)h)?((?<minute>\d+)m)?((?<second>\d+)s)?$/
+const durationPattern = /^((?<year>\d+)y)?(((?<month>\d+)M)?|((?<week>\d+)w)?)((?<day>\d+)d)?((?<hour>\d+)h)?((?<minute>\d+)m)?((?<second>\d+)s)?$/
 function parseDuration(text) {
     var match = durationPattern.exec(text);
 
@@ -72,8 +72,8 @@ function getDurationInput() {
     var minutes = parseInt(core.getInput('minutes'));
     var seconds = parseInt(core.getInput('seconds'));
 
-    if (weeks !== NaN && (months !== NaN || days !== NaN)) {
-        core.setFailed('Weeks are incompatible with months and days');
+    if (weeks !== NaN && months !== NaN) {
+        core.setFailed('Weeks are incompatible with months');
         return undefined;
     }
 
