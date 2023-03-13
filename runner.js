@@ -34,8 +34,6 @@ function addMonths(date, months) {
 }
 
 function addDuration(date, duration) {
-    core.info(`typeof date: ${typeof date}`);
-
     if (!isNaN(duration.years)){
         date.setFullYear(date.getFullYear() + duration.years);
     }
@@ -111,7 +109,7 @@ async function run() {
 
         core.info(`Required duration: ${JSON.stringify(openTime)}`);
 
-        const created = pullRequest.created_at;
+        const created = new Date(pullRequest.created_at);
         core.info(`PR created on ${created}`);
         const earliestAllowedMerge = addDuration(created, openTime);
         core.info(`PR can be merged after ${earliestAllowedMerge}`);
