@@ -110,6 +110,7 @@ async function run() {
         core.info(`Required duration: ${JSON.stringify(openTime)}`);
 
         const created = pullRequest.created_at;
+        core.info(`PR created on ${created}`);
         const earliestAllowedMerge = addDuration(created, openTime);
         core.info(`PR can be merged after ${earliestAllowedMerge}`);
         
