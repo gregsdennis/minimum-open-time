@@ -77,7 +77,7 @@ function getDurationInput() {
         return undefined;
     }
 
-    const duration = {
+    return {
         years: years,
         months: months,
         weeks: weeks,
@@ -86,10 +86,6 @@ function getDurationInput() {
         minutes: minutes,
         seconds: seconds
     };
-
-    core.info(`Input duration: ${duration}`);
-
-    return duration;
 }
 
 async function run() {
@@ -110,6 +106,8 @@ async function run() {
         if (openTime === undefined){
             return;
         }
+
+        core.info(`Required duration: ${duration}`);
 
         const created = pullRequest.created_at;
         const earliestAllowedMerge = addDuration(created, openTime);
