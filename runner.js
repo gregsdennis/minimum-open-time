@@ -58,7 +58,7 @@ function addDuration(date, duration) {
     return date;
 }
 
-function getInputDuration() {
+function getDurationInput() {
     var time = core.getInput('time');
     if (time !== undefined){
         return parseDuration(time);
@@ -85,7 +85,7 @@ function getInputDuration() {
         hours: hours,
         minutes: minutes,
         seconds: seconds
-    }
+    };
 }
 
 async function run() {
@@ -102,12 +102,15 @@ async function run() {
 
         // get parameters
 
-        const openTime = getInputDuration(parameters);
+        const openTime = getDurationInput();
         if (openTime === undefined){
             return;
         }
 
-        const created = pullRequest.created_at;
+        core.info(`Required duration: ${JSON.stringify(openTime)}`);
+
+        const created = new Date(pullRequest.created_at);
+        core.info(`PR created on ${created}`);
         const earliestAllowedMerge = addDuration(created, openTime);
         core.info(`PR can be merged after ${earliestAllowedMerge}`);
         

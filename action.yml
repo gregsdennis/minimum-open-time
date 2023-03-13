@@ -1,5 +1,30 @@
 name: 'Minimum Open Time'
 description: 'Verify PRs have been open for a minimum time'
+inputs:
+  time:
+    description: 'full time in parsable format (see docs)'
+    required: false
+  years:
+    description: 'number of years'
+    required: false
+  months:
+    description: 'number of months (incompatible with weeks)'
+    required: false
+  weeks:
+    description: 'number of weeks (incompatible with months/days)'
+    required: false
+  days:
+    description: 'number of days (incompatible with weeks)'
+    required: false
+  hours:
+    description: 'number of hours'
+    required: false
+  minutes:
+    description: 'number of minutes'
+    required: false
+  seconds:
+    description: 'number of seconds'
+    required: false
 branding:
   icon: alert-triangle
   color: orange
