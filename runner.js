@@ -107,7 +107,7 @@ async function run() {
             return;
         }
 
-        core.info(`Required duration: ${duration}`);
+        core.info(`Required duration: ${openTime}`);
 
         const created = pullRequest.created_at;
         const earliestAllowedMerge = addDuration(created, openTime);
